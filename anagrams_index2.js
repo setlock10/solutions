@@ -7,28 +7,13 @@
 //   anagrams('rail safety', 'fairy tales') --> True
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
-//
-// function anagrams(stringA, stringB)
 
-//     cleanA<-stringA   clean the strings - remove spaces and puncuation, make lowercase
-//     cleanB<-stringB
-
-//     tallyA<-{}  initialize as empty objects
-//     tallyB<-{}
-
-//     Calculate the tally for each string
-
-//     compare each key value pair in both objects
-//        return true if all are true
-//        return false if any is false
-
-   
 
 
 function anagrams(stringA, stringB) {
 
     const cleanA=stringA.replace(/[^\w]/g,'').toLowerCase().split('').sort();
-    const cleanB=stringB.replace(/[^\w]/g,'').toLowerCase().split('').sort();
+    const cleanB=stringB.replace(/[\W]/g,'').toLowerCase().split('').sort();
     
     const tallyA= {};
     const tallyB= {};
@@ -54,3 +39,4 @@ function anagrams(stringA, stringB) {
 }
 
 module.exports = anagrams;
+
