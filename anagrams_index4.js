@@ -24,15 +24,11 @@
 
    
 
-
 function anagrams(stringA, stringB) {
 
     
-    if (clean(stringA)!==clean(stringA))
-        return false;
-
-      return true;
-
+    return (clean(stringA)===clean(stringB));
+    
 }
 
 function clean (string){
