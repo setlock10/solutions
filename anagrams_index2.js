@@ -34,14 +34,15 @@ function anagrams(stringA, stringB) {
      const tallyB= tally(stringB);
  
    
-     if (Object.keys(tallyA).length!=Object.keys(tallyB).length)
+     if (Object.keys(tallyA).length!==Object.keys(tallyB).length)
          return false;
  
-     for (let i=0;i<Object.keys(tallyA).length;i++){
-         if ((Object.keys(tallyA)[i]!=Object.keys(tallyB)[i]) ||
-         (Object.values(tallyA)[i]!=Object.values(tallyB)[i]))
+     for (let x in tallyA){
+         if (tallyA[x]!==tallyB[x]){
              return false;
+         }
      }
+     
      return true;
  }
  
@@ -50,7 +51,7 @@ function anagrams(stringA, stringB) {
  
      for (let c of str.replace(/[^\w]/g,'').toLowerCase().split('').sort())
          tally[c] = tally[c] +1 || 1;
-         
+ 
      return tally;
  
  }
