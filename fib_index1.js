@@ -7,14 +7,29 @@
 // forms the first ten entries of the fibonacci series.
 // Example:
 //   fib(4) === 3
+// Pseudocode for iterative solution
+//
+// initialize old <-1
+// if n is less than 2 output n
+// loop i through n starting at 2
+//     old = old + i
+// return old
 
 function fib(n) {
+    let old1 = 0;
+    let old2= 1;
+    let result = 0;
+
     if (n<2)
         return (n)
-    else
-        return(fib(n-1)+ fib(n-2))
-        
-
+    else{
+        for (let i=1;i<n;i++){
+            result=old2 + old1;
+            old1 = old2 ;
+            old2 = result;
+        }
+    }
+    return result;
 }
 
 module.exports = fib;
