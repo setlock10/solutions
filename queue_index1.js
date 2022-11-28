@@ -10,7 +10,7 @@
 
 class Queue {
     constructor(){
-        this.elements = {};
+        this.elements = [];
         this.head = 0;
         this.tail = 0;
     }
